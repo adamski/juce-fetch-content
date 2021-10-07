@@ -3,7 +3,7 @@ project(JuceFetchContent)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include(FetchContent)
+include(FetchContent
 
 set(FETCHCONTENT_QUIET FALSE)
 
@@ -29,17 +29,8 @@ message(${juce_SOURCE_DIR})
 
 file(GLOB_RECURSE JUCE_MODULE_SOURCES
         "${juce_SOURCE_DIR}/modules/*"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.cpp"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.mm"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.c"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.java"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.txt"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.md"
-        #        "${tracktion_engine_SOURCE_DIR}/modules/*.tcc"
-        )
 
 source_group(TREE ${juce_SOURCE_DIR}/modules PREFIX "Modules" FILES ${JUCE_MODULE_SOURCES})
-#source_group(TREE ${tracktion_engine_SOURCE_DIR}/modules PREFIX "Modules/Misc" FILES ${TRACKTION_MODULE_MISC})
 
 add_library(JuceFetchContent STATIC ${SOURCES_MAIN})
 
